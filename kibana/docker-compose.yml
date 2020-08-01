@@ -1,0 +1,10 @@
+version: '3'
+services:
+    kibana:
+        container_name: kibana
+        image: kibana:6.8.6
+        ports:
+            - 5601:5601
+        network_mode: bridge
+        environment:
+            ELASTICSEARCH_HOSTS: http://192.168.248.128:9200
