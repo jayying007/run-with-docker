@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ego:
+    container_name: ego
+    image: java:8
+    network_mode: host
+    volumes:
+      - ./order-0.1.jar:/tmp/order.jar
+    command:
+      - java
+      - -jar
+      - /tmp/order.jar
+  ego2:
+    container_name: ego2
+    image: java:8
+    network_mode: host
+    volumes:
+      - ./order-0.1.jar:/tmp/order.jar
+    command:
+      - java
+      - -jar
+      - /tmp/order.jar
+      - --server.port=8080
